@@ -10,6 +10,7 @@ urlpatterns = [
     # path(route,view,opt(kısayol ismi)) route->yönü verir
 
     path('', views.index, name="index"),
+    path('about/', views.about, name="about"),
 
    
 ]
