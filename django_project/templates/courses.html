@@ -8,7 +8,7 @@
 	
 	<div class="all-title-box">
 		<div class="container text-center">
-			<h1>Blog Single<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+			<h1>COURSES<span class="m_1">Courses For Everbody</span></h1>
 		</div>
 	</div>
 	
@@ -24,11 +24,13 @@
                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                             <div class="course-item">
                                 <div class="image-blog">
-                                    <!-- <img src="{{course.image.url}}" alt="" class="img-fluid" width="50"> -->
-                                </div>
+                                    <!-- <img src="{{course.image.url }}" alt="" class="img-fluid"> -->
+									<img src="{{course.image.url }}" alt="" width="300" height="200">
+                                </div> 
                                 <div class="course-br">
                                     <div class="course-title">
-                                        <h2><a href="#" title="">{{course.name}}</a></h2>
+										{% comment %} Kursumuzu One to Many şekline getirdik. 2 adet Parametre aldı {% endcomment %}
+                                        <h2><a href="{% url 'course_detail' course.category.slug course.id %}" title="">{{course.name}}</a></h2>
                                     </div>
                                     <div class="course-desc">
                                         <p>{{course.description| truncatechars:100}}</p>
@@ -45,8 +47,12 @@
                             </div>
                         </div><!-- end col -->
         
-						{% endfor %}
-				<div class="col-lg-3 col-12 right-single">
+							{% endfor %}
+					</div><!-- end row -->
+				
+					
+				</div><!-- end col -->
+				<div class="col-lg-3 col-12 mr-auto">
 					<div class="widget-search">
 						<div class="site-search-area">
 							<form method="get" id="site-searchform" action="#">
@@ -61,11 +67,6 @@
 						<h3 class="widget-title">Categories</h3>
 						<ul>
 							<li><a href="#">Political Science</a></li>
-							<li><a href="#">Business Leaders Guide</a></li>
-							<li><a href="#">Become a Product Manage</a></li>
-							<li><a href="#">Language Education</a></li>
-							<li><a href="#">Micro Biology</a></li>
-							<li><a href="#">Social Media Management</a></li>
 						</ul>
 					</div>
 					<div class="widget-tags">
